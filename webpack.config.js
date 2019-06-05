@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     mode: 'development',
@@ -15,6 +16,7 @@ module.exports = {
         contentBase: './dist'
     },
     plugins: [
+        new Dotenv(),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: 'Template',
@@ -40,7 +42,7 @@ module.exports = {
             Scrollspy: 'exports-loader?Scrollspy!bootstrap/js/dist/scrollspy',
             Tab: 'exports-loader?Tab!bootstrap/js/dist/tab',
             Tooltip: "exports-loader?Tooltip!bootstrap/js/dist/tooltip",
-            Util: 'exports-loader?Util!bootstrap/js/dist/util'
+            Util: 'exports-loader?Util!bootstrap/js/dist/util',
         }),
     ],
     module: {
