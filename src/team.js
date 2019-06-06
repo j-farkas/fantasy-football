@@ -3,6 +3,7 @@ export class team{
         this.name = name;
         this.playerIds = {QB: "", RB: "", WR: "", TE: "", K: ""};
         this.score = [];
+        this.weeks = [];
     }
     // get points(){
     //     let total = 0;
@@ -12,5 +13,5 @@ export class team{
     //     this.score.push(total);
     // }
 
-   
+
 }

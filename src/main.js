@@ -26,6 +26,18 @@ console.log(game);
     //game.teams.players.push($("#QB").text());
     game.teams[game.turn % 2].playerIds[game.pos] = $("#QB :selected").text();
     game.turn++;
+    console.log(game.turn);
+    if (game.turn == 10){
+      game.turn = 0;
+      //hide above ui
+      //setInterval()
+      let timer = setInterval(function(){
+        game.startSeason();
+          if(game.turn === 17){
+            clearInterval(timer);
+          }
+          }, 3000);
+    }
     console.log(game);
     event.preventDefault();
   })
