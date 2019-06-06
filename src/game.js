@@ -127,8 +127,18 @@ export class Game {
   let scores1 = game.teams[0].weeks[game.turn-1];
   let scores2 = game.teams[1].weeks[game.turn-1];
   console.log(scores2);
-  $("#team1").append(`<li>Week ${game.turn}</li>`);
-  $("#team2").append(`<li>Week ${game.turn}</li>`);
+  // $(".team1.QB").append(`${game.teams[0].playerIds.QB}</li>`);
+  // $(".team1.RB").append(`${game.teams[0].playerIds.RB}</li>`);
+  // $(".team1.WR").append(`${game.teams[0].playerIds.WR}</li>`);
+  // $(".team1.TE").append(`${game.teams[0].playerIds.TE}</li>`);
+  // $(".team1.K").append(`${game.teams[0].playerIds.K}</li>`);
+  //
+  // $(".team2.QB").append(`${game.teams[1].playerIds.QB}</li>`);
+  // $(".team2.RB").append(`${game.teams[1].playerIds.RB}</li>`);
+  // $(".team2.WR").append(`${game.teams[1].playerIds.WR}</li>`);
+  // $(".team2.TE").append(`${game.teams[1].playerIds.TE}</li>`);
+  // $(".team2.K").append(`${game.teams[1].playerIds.K}</li>`);
+  //$(".team2,.QB").append(`Week ${game.turn}</li>`);
   positions.forEach(function(pos){
     console.log("position" + pos)
     console.log("In here")
@@ -139,7 +149,7 @@ export class Game {
       {
         score1 = 0;
       }
-      $("#team1").append(`<li>${pos}: ${scores1[pos].firstName} ${scores1[pos].lastName} - ${score1}</li>`);
+      $(".team1."+pos).append(` / ${game.turn} - ${score1}`);
       //score2 = scores2[pos].pts;
       totalscore1 += parseInt(score1);
     }
@@ -149,15 +159,22 @@ export class Game {
       {
         score2 = 0;
       }
-      $("#team2").append(`<li>${pos}: ${scores2[pos].firstName} ${scores2[pos].lastName} - ${score2}</li>`);
+      $(".team2." + pos).append(` / ${game.turn} - ${score2}`);
       totalscore2 += parseInt(score2);
     }
+
     // score2 += game.teams[0].weeks[pos].pts;
     //$("#team2").append(`<li>${pos}: ${scores2[pos].firstName} ${scores2[pos].lastName} - ${parseFloat(scores2[pos].pts)}</li>`);
     // $("#team2").append(`<li>${pos}: ${game.teams[1].weeks[pos].firstName} ${game.teams[1].weeks[pos].lastName} - ${game.teams[1].weeks[pos].pts}</li>`);
   })
+  $(".team1.total").append(` / ${totalscore1}`);
+  $(".team2.total").append(` / ${totalscore2}`);
   game.teams[0].score.push(totalscore1);
   game.teams[1].score.push(totalscore2);
+  if(game.turn === 17){
+    $(".team1.total").append(` / ${game.teams[0].score.reduce((accumulator, currentValue) => accumulator + currentValue)}`);
+    $(".team2.total").append(` / ${game.teams[1].score.reduce((accumulator, currentValue) => accumulator + currentValue)}`);
+  }
 }, 1000);
 
    //Object.values(scores1).forEach(function(pos){

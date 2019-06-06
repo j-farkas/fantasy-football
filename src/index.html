@@ -6,7 +6,7 @@
     </head>
     <body>
         <div>
-            <form id="createTeam">
+            <form id="createTeam" class="first">
                 <label for="team1">Team 1 name</label>
                 <input type="text" id="player1"></input>
                 <label for="team2">Team 2 name</label>
@@ -14,40 +14,40 @@
                 <button type="submit">Name teams</button>
             </form>
         </div>
-        <form>
-            <label for="QB">Choose a position Team 1</label>
+        <form class="second">
+            <label for="QB"><span class="teamname"></span> Choose a position</label>
             <button name="QB" class="QB p1">QB</button>
             <button name="RB" class="RB p1">RB</button>
             <button name="WR" class="WR p1">WR</button>
             <button name="TE" class="TE p1">TE</button>
             <button name="K" class="K p1">Kicker</button><br>
-
-            <label for="team2">Choose a position Team 2</label>
-            <button name="QB" class="QB 2">QB</button>
-            <button name="RB" class="RB 2">RB</button>
-            <button name="WR" class="WR 2">WR</button>
-            <button name="TE" class="TE 2">TE</button>
-            <button name="K"class="K 2">Kicker</button>
         </form>
         <div >
-            <form id="teamBuilder" >
+            <form id="teamBuilder" class="third" >
                 <label for="QB">Choose a player</label>
                 <select name="QB" id="QB">
                     <span class="QB"></span>
                 </select>
                 <button type="submit">Make Your Pick</button>
             </form><br>
-            <form>
-                <label for="QB2">Choose a QB Team 2</label>
-                <select name="QB2" id="QB2">
-                    <span class="QB2"></span>
-                </select>
-            </form>
         </div>
         <div id="weeklyResults">
-            <ul id="team1">Team 1</ul>
-            
-            <ul id="team2">Team 2</ul>
+            <ul id="team1"><span class="team1name">Team 1</span>
+              <li class = "QB team1"></li>
+              <li class = "RB team1"></li>
+              <li class = "WR team1"></li>
+              <li class = "TE team1"></li>
+              <li class = "K team1"></li>
+              <li class = "total team1">Total: </li>
+              </ul>
+            <ul id="team2"><span class="team2name">Team 2</span>
+              <li class = "QB team2"></li>
+              <li class = "RB team2"></li>
+              <li class = "WR team2"></li>
+              <li class = "TE team2"></li>
+              <li class = "K team2"></li>
+              <li class = "total team2">Total: </li>
+            </ul>
         </div>
     </body>
 </html>
