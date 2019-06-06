@@ -2,9 +2,9 @@
 import $ from 'jquery';
 import { team } from './team';
 import { Game } from './game';
-// import 'bootstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import './css/styles.css';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.css';
 $(document).ready(function() {
   $(".second").hide();
   $(".third").hide();

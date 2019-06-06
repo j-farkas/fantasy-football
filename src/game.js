@@ -172,6 +172,7 @@ export class Game {
   game.teams[0].score.push(totalscore1);
   game.teams[1].score.push(totalscore2);
   if(game.turn === 17){
+    $(".final").addClass("Jumbotron");
     $(".team1.total").append(` / ${game.teams[0].score.reduce((accumulator, currentValue) => accumulator + currentValue)}`);
     $(".team2.total").append(` / ${game.teams[1].score.reduce((accumulator, currentValue) => accumulator + currentValue)}`);
   }

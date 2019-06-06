@@ -1,3 +1,14 @@
 body {
-    background-color: #7FDBFF;
+    background-color: slategrey;
+}
+
+li {
+  list-style: none;
+}
+
+.final {
+  text-decoration: underline;
+  font-size: 500%;
+  font-family: fantasy;
+  color: darkred;
 }
